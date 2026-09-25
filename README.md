@@ -1,5 +1,3 @@
-# Albacete_movie-api-server
-
 # Movie REST API Server
 
 A simple Flask REST API managing a movie dataset stored in SQLite.
@@ -18,14 +16,26 @@ A simple Flask REST API managing a movie dataset stored in SQLite.
 
 ### POST /movies
 **Request:**
-`POST /movies`
+`POST /movies`  
 `Content-Type: application/json`
+
 ```json
 {
   "title": "Oppenheimer",
   "year": 2023,
   "genre": "Biography"
 }
+```
+
+**Response (201 Created):**
+```json
+{
+  "id": 16,
+  "title": "Oppenheimer",
+  "year": 2023,
+  "genre": "Biography"
+}
+```
 
 ## API Testing Screenshots
 
@@ -40,7 +50,6 @@ A simple Flask REST API managing a movie dataset stored in SQLite.
 
 ### DELETE Item (200 OK)
 ![DELETE Request](./PicsHere/delete.png)
-
 
 ## Live API URL (Bonus)
 https://albacete-movie-api-server-1.onrender.com/movies
