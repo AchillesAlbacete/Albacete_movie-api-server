@@ -30,16 +30,16 @@ A simple Flask REST API managing a movie dataset stored in SQLite.
 ## API Testing Screenshots
 
 ### GET Single Item (200 OK)
-![GET Request](PicsHere/GET%20Single%20Item%20(200%20OK).png)
+![GET Request](./PicsHere/get.png)
 
 ### POST Create Item (201 Created)
-![POST Request](PicsHere/POST%20Create%20Item%20(201%20Created).png)
+![POST Request](./PicsHere/post.png)
 
 ### PUT Update Item (200 OK)
-![PUT Request](PicsHere/PUT%20Update%20Item%20(200%20OK).png)
+![PUT Request](./PicsHere/put.png)
 
 ### DELETE Item (200 OK)
-![DELETE Request](PicsHere/DELETE%20Item%20(200%20OK).png)
+![DELETE Request](./PicsHere/delete.png)
 
 
 ## Live API URL (Bonus)
