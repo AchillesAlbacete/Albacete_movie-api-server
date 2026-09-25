@@ -27,5 +27,20 @@ A simple Flask REST API managing a movie dataset stored in SQLite.
   "genre": "Biography"
 }
 
+## API Testing Screenshots
+
+### GET Single Item (200 OK)
+![GET Request](PicsHere/GET%20Single%20Item%20(200%20OK).png)
+
+### POST Create Item (201 Created)
+![POST Request](PicsHere/POST%20Create%20Item%20(201%20Created).png)
+
+### PUT Update Item (200 OK)
+![PUT Request](PicsHere/PUT%20Update%20Item%20(200%20OK).png)
+
+### DELETE Item (200 OK)
+![DELETE Request](PicsHere/DELETE%20Item%20(200%20OK).png)
+
+
 ## Live API URL (Bonus)
 https://albacete-movie-api-server-1.onrender.com/movies
