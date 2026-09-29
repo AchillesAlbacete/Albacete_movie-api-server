@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101315">
+  <title>CiNeMooore — Movie Library</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script src="/assets/app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Movie library">
+      <a class="brand" href="/" aria-label="CiNeMooore home">
+        <span class="brand-mark" aria-hidden="true">c</span>
+        <span>CiNeMooore<span class="brand-period">.</span></span>
+      </a>
+
+      <div class="library-heading">
+        <div>
+          <p class="eyebrow">YOUR COLLECTION</p>
+          <h1>Movie library</h1>
+        </div>
+        <span class="count-badge" id="movie-count">—</span>
+      </div>
+
+      <label class="search-box">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 4.2 4.2"></path></svg>
+        <input id="search-input" type="search" placeholder="Search your library" autocomplete="off" aria-label="Search movies">
+        <kbd>/</kbd>
+      </label>
+
+      <div class="list-label"><span>ALL MOVIES</span><button class="text-button" id="refresh-button" type="button">Refresh</button></div>
+      <div class="movie-list" id="movie-list" aria-live="polite">
+        <div class="list-state">Loading your library…</div>
+      </div>
+      <div class="sidebar-footer">
+        <span class="status-dot"></span>
+        <span>Connected to your local API</span>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="breadcrumb"><span>LIBRARY</span><span class="slash">/</span><span id="breadcrumb-current">OVERVIEW</span></div>
+        <button class="button button-primary add-button" id="add-button" type="button">
+          <span class="plus-icon" aria-hidden="true">+</span> Add a movie
+        </button>
+      </header>
+
+      <section class="content-area" id="content-area" aria-live="polite">
+        <div class="welcome-panel">
+          <div class="welcome-copy">
+            <span class="pill"><span class="pill-dot"></span> YOUR PERSONAL ARCHIVE</span>
+            <h2>A good story<br>never gets old.</h2>
+            <p>Keep your favorite films close. Browse your collection, revisit the details, and make it your own.</p>
+            <button class="button button-primary" id="welcome-add-button" type="button"><span class="plus-icon" aria-hidden="true">+</span> Add your first movie</button>
+          </div>
+          <div class="welcome-art" aria-hidden="true">
+            <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+            <div class="art-disc"><div class="disc-groove"></div><div class="disc-label"><span>CINE<br>MOOORE</span></div></div>
+            <div class="art-star star-one">✳</div><div class="art-star star-two">✳</div>
+          </div>
+        </div>
+        <div class="detail-card hidden" id="detail-card"></div>
+      </section>
+
+      <footer class="main-footer"><span>MADE FOR THE LOVE OF FILM</span><span>CINEMOOORE <span class="footer-dot">●</span> LOCAL LIBRARY</span></footer>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <dialog class="movie-dialog" id="movie-dialog" aria-labelledby="dialog-title">
+    <form id="movie-form" class="movie-form" novalidate>
+      <div class="dialog-heading">
+        <div><p class="eyebrow" id="dialog-eyebrow">YOUR COLLECTION</p><h2 id="dialog-title">Add a movie</h2></div>
+        <button class="icon-button close-button" type="button" id="close-dialog" aria-label="Close dialog">×</button>
+      </div>
+      <p class="dialog-description" id="dialog-description">A few details are all it takes to add a new favorite.</p>
+      <input type="hidden" id="movie-id">
+      <label class="field-label" for="title-input">Movie title</label>
+      <input class="form-input" id="title-input" name="title" placeholder="e.g. The Grand Budapest Hotel" autocomplete="off">
+      <div class="form-row">
+        <div class="field-group"><label class="field-label" for="year-input">Release year</label><input class="form-input" id="year-input" name="year" type="number" min="1888" max="2100" placeholder="e.g. 2014"></div>
+        <div class="field-group"><label class="field-label" for="genre-input">Genre</label><input class="form-input" id="genre-input" name="genre" placeholder="e.g. Comedy"></div>
+      </div>
+      <div class="form-error hidden" id="form-error" role="alert"></div>
+      <div class="dialog-actions"><button class="button button-quiet" type="button" id="cancel-dialog">Cancel</button><button class="button button-primary" id="save-button" type="submit">Save movie</button></div>
+    </form>
+  </dialog>
+</body>
+</html>

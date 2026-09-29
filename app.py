@@ -1,7 +1,11 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 import sqlite3
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='frontend', static_url_path='/assets')
+
+@app.route('/')
+def index():
+    return send_from_directory(app.static_folder, 'index.html')
 
 def get_db_connection():
     conn = sqlite3.connect('database.db')
